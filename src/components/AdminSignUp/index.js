@@ -4,6 +4,7 @@ import { Alert, Button, Stack, TextField } from "@mui/material";
 import { AppSignUpCon } from "./skins";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { env } from "../commons/env";
 
 class AdminSignUp extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class AdminSignUp extends React.Component {
     let password = document.getElementById("password").value;
     let req = { name, email, password, admin: true };
     axios
-      .post(`http://localhost:8000/user/signup`, req)
+      .post(`${env.API_URL}/user/signup`, req)
       .then((res) => {
         console.log("Response: ", res);
       })

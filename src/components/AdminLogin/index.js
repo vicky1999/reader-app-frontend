@@ -3,6 +3,7 @@ import React from "react";
 import { Button, TextField } from "@mui/material";
 import { AppLoginCon } from "./skins";
 import axios from "axios";
+import { env } from "../commons/env";
 
 class AdminLogin extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class AdminLogin extends React.Component {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let req = { email, password, admin: true };
-    axios.get(`http://localhost:8000/user/login`, req).then((res) => {
+    axios.get(`${env.API_URL}/user/login`, req).then((res) => {
       console.log("Response: ", res);
     });
   }
