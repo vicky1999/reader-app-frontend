@@ -1,21 +1,23 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const AppSignUpCon = styled.div`
-.a_signup{
+  .a_signup {
     border: 1px solid black;
     border-radius: 2px;
     padding: 4% 4% 4% 4%;
     display: inline-grid;
     margin-left: 36%;
     margin-top: 16%;
-}
-.a_field{
+  }
+  .a_field {
     padding: 2%;
-}
+  }
 
-.a_button{
-   text-align: center;
-}
+  .a_button {
+    text-align: center;
+  }
 
-
+  .alert-popup {
+    display: ${(props) => (props.isError ? "block" : "none")};
+  }
 `;
